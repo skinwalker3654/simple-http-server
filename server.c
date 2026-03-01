@@ -54,9 +54,9 @@ int main(void) {
     }
 
     char *filename = buffer;
-    filename += 5; //skips the first 5 characters, that means that is going to skip the GET / and then we can get the filename
+    filename += 5; //skips the first 5 characters, that means that is going to skip the GET / so we can get the filename
 
-    *(strchr(filename,' ')) = '\0'; //this line of code finds the first whitespace and puts a null terminator there so we can keep only the filename
+    *(strchr(filename,' ')) = '\0'; //this line of code finds the first whitespace and puts a null terminator there so we can keep the filename only
 
     int file_fd = open(filename,O_RDONLY,0);
     if(file_fd == -1) {
